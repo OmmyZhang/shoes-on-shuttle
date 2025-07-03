@@ -1,0 +1,11 @@
+# Declare ignored files that should be included in the upload:
+[deploy]
+include = [
+    "config.shoes.yaml"
+]
+
+# Declare files that should be copied to the runtime image:
+[build]
+assets = [
+    "config.shoes.yaml"
+]

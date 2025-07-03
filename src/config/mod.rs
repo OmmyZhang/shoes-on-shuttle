@@ -14,7 +14,7 @@ use crate::util::parse_uuid;
 
 const MIN_TLS_BUFFER_SIZE: usize = 16 * 1024;
 
-pub async fn load_configs(args: &Vec<String>) -> std::io::Result<Vec<Config>> {
+pub async fn load_configs(args: &[String]) -> std::io::Result<Vec<Config>> {
     let mut all_configs = vec![];
     for config_filename in args {
         let config_bytes = match tokio::fs::read(config_filename).await {

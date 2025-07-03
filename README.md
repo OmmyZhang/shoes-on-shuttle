@@ -1,6 +1,13 @@
 # shoes
 
-shoes is a multi-protocol proxy server written in Rust.
+shoes is a multi-protocol proxy server written in Rust. Now, let's deploy it on [shuttle](https://www.shuttle.dev/) to get a free proxy.
+
+## How to deploy
+
+- Install and login shuttle
+- Create your `config.shoes.yaml` (`address` doesn't matter)
+- `shuttle deploy`
+
 
 ## Supported protocols
 

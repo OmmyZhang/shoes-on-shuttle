@@ -1,12 +1,33 @@
-# shoes
+# shoes-on-shuttle
 
-shoes is a multi-protocol proxy server written in Rust. Now, let's deploy it on [shuttle](https://www.shuttle.dev/) to get a free proxy.
+[shoes](https://github.com/cfal/shoes) is a multi-protocol proxy server written in Rust. Now, let's deploy it on [shuttle](https://www.shuttle.dev/) to get a free proxy.
 
 ## How to deploy
 
 - Install and login shuttle
 - Create your `config.shoes.yaml` (`address` doesn't matter)
 - `shuttle deploy`
+
+## Config example
+
+The format is slightly **different** from the upstream project, since shoes-on-shuttle only supports one config.
+
+```yaml
+address: 0.0.0.0:10081
+transport: tcp
+protocol:
+  type: ws
+  targets:
+    - matching_path: /some-path-you-like
+      protocol:
+        type: vmess
+        cipher: any
+        user_id: some-random-uuid
+rules:
+  - mask: 0.0.0.0/0
+    action: allow
+    client_proxy: direct
+```
 
 
 ## Supported protocols
